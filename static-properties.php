@@ -17,6 +17,7 @@ class Beverage
         $this->price = $price;
         $this->temperature = $temperature;
         self::$timesServed++;
+
     }
 
     public function getInfo()
@@ -38,7 +39,7 @@ class Beverage
         return $this->color;
     }
 
-    public function getTotalServed()
+    public static function getTotalServed()
     {
         return self::$timesServed;
     }
@@ -100,14 +101,13 @@ echo $duvel->beerInfo();
 
 var_dump($duvel);
 
-$duvel = new Beer("blond", 3.5, "Duvel", 8.5);
 $rochefort = new Beer("brown", 5, "Rochefort", 11,5);
 $chimay = new Beer("brown", 4.5, "Chimay", 8.5);
 
 var_dump($rochefort);
 var_dump($chimay);
 
-echo $duvel->getTotalServed();
+echo Beverage::getTotalServed();
 
 
 
